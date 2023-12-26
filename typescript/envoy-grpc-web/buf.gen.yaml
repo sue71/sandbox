@@ -1,0 +1,25 @@
+version: v1
+managed:
+  enabled: true
+plugins:
+  - plugin: buf.build/bufbuild/validate-go
+    out: backend/internal/proto
+    opt: paths=source_relative
+  - plugin: go
+    out: backend/internal/proto
+    opt: paths=source_relative
+  - plugin: go-grpc
+    out: backend/internal/proto
+    opt: paths=source_relative
+  - plugin: buf.build/connectrpc/es
+    out: frontend/src/gen/proto
+    opt:
+      - target=js+dts
+  - plugin: buf.build/connectrpc/query-es
+    out: frontend/src/gen/proto
+    opt:
+      - target=js+dts
+  - plugin: buf.build/bufbuild/es
+    out: frontend/src/gen/proto
+    opt:
+      - target=js+dts
