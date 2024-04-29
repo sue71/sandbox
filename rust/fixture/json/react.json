@@ -1,0 +1,7 @@
+{
+  "foo": "hi",
+  "bar": "hi!",
+  "baz": "this element is {{element}}",
+  "lineBreak": "hello<br />world<br/>hi!",
+  "transComponents": "<link>aaaaa</link><button />"
+}
