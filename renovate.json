@@ -1,0 +1,49 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+      "config:base",
+      ":semanticCommitTypeAll(chore)",
+      ":enableVulnerabilityAlerts",
+      "helpers:pinGitHubActionDigests"
+    ],
+    "enabledManagers": [
+      "github-actions",
+      "gomod",
+      "npm",
+      "dockerfile",
+      "docker-compose"
+    ],
+    "ignoreDeps": ["enechain/shared-reusable-workflows"],
+    "gomod": {
+      "prConcurrentLimit": 5
+    },
+    "npm": {
+      "prConcurrentLimit": 5
+    },
+    "github-actions": {
+      "prConcurrentLimit": 2
+    },
+    "dockerfile": {
+      "prConcurrentLimit": 2
+    },
+    "packageRules": [
+      {
+        "matchManagers": ["npm"],
+        "semanticCommitScope": "deps, ts"
+      },
+      {
+        "matchManagers": ["dockerfile", "docker-compose"],
+        "semanticCommitScope": "deps, docker"
+      },
+      {
+        "matchManagers": ["gomod"],
+        "semanticCommitScope": "deps, go"
+      },
+      {
+        "matchManagers": ["github-actions"],
+        "semanticCommitScope": "deps, actions",
+        "pinDigests": true
+      }
+    ]
+  }
+  
