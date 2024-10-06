@@ -14,6 +14,7 @@
       "dockerfile",
       "docker-compose"
     ],
+    "rangeStrategy": "pin",
     "ignoreDeps": ["enechain/shared-reusable-workflows"],
     "gomod": {
       "prConcurrentLimit": 5
