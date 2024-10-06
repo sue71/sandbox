@@ -6,6 +6,7 @@
       ":enableVulnerabilityAlerts",
       "helpers:pinGitHubActionDigests"
     ],
+    "skipInstalls": true,
     "enabledManagers": [
       "github-actions",
       "gomod",
