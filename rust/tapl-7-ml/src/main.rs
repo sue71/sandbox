@@ -1,9 +1,11 @@
+#![feature(box_patterns)]
+
 #[derive(Debug, Clone, PartialEq)]
 enum Term {
-    Var(usize, usize),       // deBruijn_index * term_length
-    Abs(String, Box<Term>),  // bound_var_name * partial_term
+    Var(usize, usize),         // deBruijn_index * term_length
+    Abs(String, Box<Term>),    // bound_var_name * partial_term
     App(Box<Term>, Box<Term>), // arg_term * applying_term
-    Wrong,                   // Error handling
+    Wrong,                     // Error handling
 }
 
 #[derive(Debug, Clone)]
@@ -32,15 +34,8 @@ fn get_or_else<T>(opt: Option<T>, default: T) -> T {
     }
 }
 
-fn listfind<'a, T, F>(lst: &'a [T], predicate: F) -> Option<&'a T>
-where
-    F: Fn(&'a T) -> bool,
-{
-    lst.iter().find(predicate)
-}
-
 fn pickfreshname(ctx: &Context, name: String) -> (Context, String) {
-    let oldname = listfind(ctx, |(n, _)| n == &name);
+    let oldname = ctx.iter().find(|(n, _)| n == &name);
     match oldname {
         Some((name, _)) => pickfreshname(ctx, format!("{}'", name)),
         None => {
@@ -61,8 +56,8 @@ fn string_of_term(ctx: &Context, t: &Term) -> String {
             }
         }
         Term::Abs(name, tm) => {
-            let (ctx', name') = pickfreshname(ctx, name.clone());
-            format!("(lambda {}. {})", name', string_of_term(&ctx', tm))
+            let (ctx, name) = pickfreshname(ctx, name.clone());
+            format!("(lambda {}. {})", name, string_of_term(&ctx, tm))
         }
         Term::App(t1, t2) => {
             format!("({} {})", string_of_term(ctx, t1), string_of_term(ctx, t2))
@@ -72,24 +67,35 @@ fn string_of_term(ctx: &Context, t: &Term) -> String {
 }
 
 fn term_shift(d: isize, t: &Term) -> Term {
-    fn walk(c: isize, t: &Term) -> Term {
+    fn walk(c: isize, d: isize, t: &Term) -> Term {
         match t {
-            Term::Var(x, ctxlen) if (*x as isize) < c => Term::Var(*x, ((*ctxlen as isize) + d) as usize),
-            Term::Var(x, ctxlen) => Term::Var(((*x as isize) + d) as usize, ((*ctxlen as isize) + d) as usize),
-            Term::Abs(name, t) => Term::Abs(name.clone(), Box::new(walk(c + 1, t))),
-            Term::App(t1, t2) => Term::App(Box::new(walk(c, t1)), Box::new(walk(c, t2))),
+            Term::Var(x, ctxlen) if (*x as isize) < c => {
+                Term::Var(*x, ((*ctxlen as isize) + d) as usize)
+            }
+            Term::Var(x, ctxlen) => Term::Var(
+                ((*x as isize) + d) as usize,
+                ((*ctxlen as isize) + d) as usize,
+            ),
+            Term::Abs(name, t) => Term::Abs(name.clone(), Box::new(walk(c + 1, d, t))),
+            Term::App(t1, t2) => Term::App(Box::new(walk(c, d, t1)), Box::new(walk(c, d, t2))),
             Term::Wrong => Term::Wrong,
         }
     }
-    walk(0, t)
+    walk(0, d, t)
 }
 
 fn term_subst(j: usize, s: &Term, t: &Term) -> Term {
     match t {
         Term::Var(k, _) if *k == j => s.clone(),
         Term::Var(_, _) => t.clone(),
-        Term::Abs(name, t) => Term::Abs(name.clone(), Box::new(term_subst(j + 1, &term_shift(1, s), t))),
-        Term::App(t1, t2) => Term::App(Box::new(term_subst(j, s, t1)), Box::new(term_subst(j, s, t2))),
+        Term::Abs(name, t) => Term::Abs(
+            name.clone(),
+            Box::new(term_subst(j + 1, &term_shift(1, s), t)),
+        ),
+        Term::App(t1, t2) => Term::App(
+            Box::new(term_subst(j, s, t1)),
+            Box::new(term_subst(j, s, t2)),
+        ),
         Term::Wrong => Term::Wrong,
     }
 }
@@ -109,11 +115,11 @@ fn eval1(ctx: &Context, t: &Term) -> Term {
         Term::App(box Term::Abs(_, t12), v2) if is_val(ctx, v2) => term_subst_top(v2, t12),
         Term::App(v1, t2) if is_val(ctx, v1) => {
             let t2 = eval1(ctx, t2);
-            Term::App(Box::new(v1.clone()), Box::new(t2))
+            Term::App(v1.clone(), Box::new(t2))
         }
         Term::App(t1, t2) => {
             let t1 = eval1(ctx, t1);
-            Term::App(Box::new(t1), Box::new(t2.clone()))
+            Term::App(Box::new(t1), t2.clone())
         }
         _ => Term::Wrong,
     }
@@ -128,7 +134,6 @@ fn eval(ctx: &Context, t: &Term) -> Term {
     }
 }
 
-
 fn main() {
     let testcases = vec![
         // (λ x. x) λ y. y => λ y. y
@@ -139,12 +144,11 @@ fn main() {
             ),
             Term::Abs("y".to_string(), Box::new(Term::Var(0, 1))),
         ),
-        // 他のテストケースを追加する...
     ];
 
     for (i, (tsrc, texpect)) in testcases.iter().enumerate() {
-        let tactual = eval1(&vec![], tsrc);
-        let result = if *tactual == *texpect {
+        let tactual = eval(&vec![], tsrc);
+        let result = if tactual == *texpect {
             "OK"
         } else {
             "**FAILURE**"
