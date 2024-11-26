@@ -111,8 +111,8 @@ importers:
         specifier: 4.3.2
         version: 4.3.2(vite@5.4.8)
       '@vitejs/plugin-react-swc':
-        specifier: 3.7.1
-        version: 3.7.1(vite@5.4.8)
+        specifier: 3.7.2
+        version: 3.7.2(vite@5.4.8)
       eslint:
         specifier: 9.11.1
         version: 9.11.1
@@ -2965,10 +2965,10 @@ packages:
       - supports-color
     dev: true
 
-  /@vitejs/plugin-react-swc@3.7.1(vite@5.4.8):
-    resolution: {integrity: sha512-vgWOY0i1EROUK0Ctg1hwhtC3SdcDjZcdit4Ups4aPkDcB1jYhmo+RMYWY87cmXMhvtD5uf8lV89j2w16vkdSVg==}
+  /@vitejs/plugin-react-swc@3.7.2(vite@5.4.8):
+    resolution: {integrity: sha512-y0byko2b2tSVVf5Gpng1eEhX1OvPC7x8yns1Fx8jDzlJp4LS6CMkCPfLw47cjyoMrshQDoQw4qcgjsU9VvlCew==}
     peerDependencies:
-      vite: ^4 || ^5
+      vite: ^4 || ^5 || ^6
     dependencies:
       '@swc/core': 1.7.26
       vite: 5.4.8(terser@5.34.1)
