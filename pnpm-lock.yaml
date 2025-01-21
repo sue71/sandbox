@@ -106,13 +106,13 @@ importers:
         version: 18.3.0
       '@vitejs/plugin-legacy':
         specifier: 5.4.2
-        version: 5.4.2(terser@5.34.1)(vite@5.4.8)
+        version: 5.4.2(terser@5.34.1)(vite@5.4.14)
       '@vitejs/plugin-react':
         specifier: 4.3.2
-        version: 4.3.2(vite@5.4.8)
+        version: 4.3.2(vite@5.4.14)
       '@vitejs/plugin-react-swc':
         specifier: 3.7.1
-        version: 3.7.1(vite@5.4.8)
+        version: 3.7.1(vite@5.4.14)
       eslint:
         specifier: 9.11.1
         version: 9.11.1
@@ -135,8 +135,8 @@ importers:
         specifier: 8.8.0
         version: 8.8.0(eslint@9.11.1)(typescript@5.6.2)
       vite:
-        specifier: 5.4.8
-        version: 5.4.8(terser@5.34.1)
+        specifier: 5.4.14
+        version: 5.4.14(terser@5.34.1)
 
   typescript/vite-sandbox-2:
     dependencies:
@@ -179,7 +179,7 @@ importers:
         version: 18.3.0
       '@vitejs/plugin-react':
         specifier: 4.3.2
-        version: 4.3.2(vite@5.4.8)
+        version: 4.3.2(vite@5.4.14)
       eslint:
         specifier: 9.11.1
         version: 9.11.1
@@ -202,8 +202,8 @@ importers:
         specifier: 8.8.0
         version: 8.8.0(eslint@9.11.1)(typescript@5.6.2)
       vite:
-        specifier: 5.4.8
-        version: 5.4.8(@types/node@22.7.4)
+        specifier: 5.4.14
+        version: 5.4.14(@types/node@22.7.4)
 
 packages:
 
@@ -2944,7 +2944,7 @@ packages:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: false
 
-  /@vitejs/plugin-legacy@5.4.2(terser@5.34.1)(vite@5.4.8):
+  /@vitejs/plugin-legacy@5.4.2(terser@5.34.1)(vite@5.4.14):
     resolution: {integrity: sha512-hlyyQL+wEIyOWdwsUKX+0g3kBU4AbHmVzHarLvVKiGGGqLIYjttMvvjk6zGY8RD9dab6QuFNhDoxg0YFhQ26xA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
@@ -2960,18 +2960,18 @@ packages:
       regenerator-runtime: 0.14.1
       systemjs: 6.15.1
       terser: 5.34.1
-      vite: 5.4.8(terser@5.34.1)
+      vite: 5.4.14(terser@5.34.1)
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@vitejs/plugin-react-swc@3.7.1(vite@5.4.8):
+  /@vitejs/plugin-react-swc@3.7.1(vite@5.4.14):
     resolution: {integrity: sha512-vgWOY0i1EROUK0Ctg1hwhtC3SdcDjZcdit4Ups4aPkDcB1jYhmo+RMYWY87cmXMhvtD5uf8lV89j2w16vkdSVg==}
     peerDependencies:
       vite: ^4 || ^5
     dependencies:
       '@swc/core': 1.7.26
-      vite: 5.4.8(terser@5.34.1)
+      vite: 5.4.14(terser@5.34.1)
     transitivePeerDependencies:
       - '@swc/helpers'
     dev: true
@@ -2992,7 +2992,7 @@ packages:
       - supports-color
     dev: false
 
-  /@vitejs/plugin-react@4.3.2(vite@5.4.8):
+  /@vitejs/plugin-react@4.3.2(vite@5.4.14):
     resolution: {integrity: sha512-hieu+o05v4glEBucTcKMK3dlES0OeJlD9YVOAPraVMOInBCwzumaIFiUjr4bHK7NPgnAHgiskUoceKercrN8vg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -3003,7 +3003,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.25.7(@babel/core@7.25.7)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 5.4.8(terser@5.34.1)
+      vite: 5.4.14(terser@5.34.1)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -5763,8 +5763,8 @@ packages:
       fsevents: 2.3.3
     dev: false
 
-  /vite@5.4.8(@types/node@22.7.4):
-    resolution: {integrity: sha512-FqrItQ4DT1NC4zCUqMB4c4AZORMKIa0m8/URVCZ77OZ/QSNeJ54bU1vrFADbDsuwfIPcgknRkmqakQcgnL4GiQ==}
+  /vite@5.4.14(@types/node@22.7.4):
+    resolution: {integrity: sha512-EK5cY7Q1D8JNhSaPKVK4pwBFvaTmZxEnoKXLG/U9gmdDcihQGNzFlgIvaxezFR4glP1LsuiedwMBqCXH3wZccA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -5802,8 +5802,8 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vite@5.4.8(terser@5.34.1):
-    resolution: {integrity: sha512-FqrItQ4DT1NC4zCUqMB4c4AZORMKIa0m8/URVCZ77OZ/QSNeJ54bU1vrFADbDsuwfIPcgknRkmqakQcgnL4GiQ==}
+  /vite@5.4.14(terser@5.34.1):
+    resolution: {integrity: sha512-EK5cY7Q1D8JNhSaPKVK4pwBFvaTmZxEnoKXLG/U9gmdDcihQGNzFlgIvaxezFR4glP1LsuiedwMBqCXH3wZccA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
