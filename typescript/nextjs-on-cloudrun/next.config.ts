@@ -4,6 +4,8 @@ const nextConfig: NextConfig = {
   /* config options here */
   output: "standalone",
 
+  basePath: "/base",
+
   headers: async () => {
     return [
       {
