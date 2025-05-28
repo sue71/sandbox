@@ -31,11 +31,11 @@ importers:
         specifier: ^20
         version: 20.16.10
       '@types/react':
-        specifier: ^19
-        version: 19.1.6
+        specifier: 19.0.10
+        version: 19.0.10
       '@types/react-dom':
-        specifier: ^19
-        version: 19.1.5(@types/react@19.1.6)
+        specifier: 19.0.4
+        version: 19.0.4(@types/react@19.0.10)
       eslint:
         specifier: ^9
         version: 9.11.1(jiti@2.4.2)
@@ -84,11 +84,11 @@ importers:
         specifier: ^20
         version: 20.16.10
       '@types/react':
-        specifier: ^19
-        version: 19.1.6
+        specifier: 19.0.10
+        version: 19.0.10
       '@types/react-dom':
-        specifier: ^19
-        version: 19.1.5(@types/react@19.1.6)
+        specifier: 19.0.4
+        version: 19.0.4(@types/react@19.0.10)
       eslint:
         specifier: ^9
         version: 9.11.1(jiti@2.4.2)
@@ -124,11 +124,11 @@ importers:
         specifier: ^20
         version: 20.16.10
       '@types/react':
-        specifier: ^19
-        version: 19.1.6
+        specifier: 19.0.10
+        version: 19.0.10
       '@types/react-dom':
-        specifier: ^19
-        version: 19.1.5(@types/react@19.1.6)
+        specifier: 19.0.4
+        version: 19.0.4(@types/react@19.0.10)
       eslint:
         specifier: ^9
         version: 9.11.1(jiti@2.4.2)
@@ -154,10 +154,10 @@ importers:
         specifier: 20.16.10
         version: 20.16.10
       '@types/react':
-        specifier: ^18.2.42
+        specifier: 18.3.23
         version: 18.3.23
       '@types/react-dom':
-        specifier: ^18.2.17
+        specifier: 18.3.7
         version: 18.3.7(@types/react@18.3.23)
       '@typescript-eslint/eslint-plugin':
         specifier: 6.21.0
@@ -231,10 +231,10 @@ importers:
         specifier: 3.0.2
         version: 3.0.2
       '@types/react':
-        specifier: ^18.3.3
+        specifier: 18.3.23
         version: 18.3.23
       '@types/react-dom':
-        specifier: ^18.3.0
+        specifier: 18.3.7
         version: 18.3.7(@types/react@18.3.23)
       '@vitejs/plugin-legacy':
         specifier: 5.4.2
@@ -249,8 +249,8 @@ importers:
         specifier: 9.11.1
         version: 9.11.1(jiti@2.4.2)
       eslint-plugin-react-hooks:
-        specifier: 5.1.0-rc-fb9a90fa48-20240614
-        version: 5.1.0-rc-fb9a90fa48-20240614(eslint@9.11.1(jiti@2.4.2))
+        specifier: 5.2.0
+        version: 5.2.0(eslint@9.11.1(jiti@2.4.2))
       eslint-plugin-react-refresh:
         specifier: 0.4.12
         version: 0.4.12(eslint@9.11.1(jiti@2.4.2))
@@ -304,10 +304,10 @@ importers:
         specifier: 22.7.4
         version: 22.7.4
       '@types/react':
-        specifier: ^18.3.3
+        specifier: 18.3.23
         version: 18.3.23
       '@types/react-dom':
-        specifier: ^18.3.0
+        specifier: 18.3.7
         version: 18.3.7(@types/react@18.3.23)
       '@vitejs/plugin-react':
         specifier: 4.3.2
@@ -316,8 +316,8 @@ importers:
         specifier: 9.11.1
         version: 9.11.1(jiti@2.4.2)
       eslint-plugin-react-hooks:
-        specifier: 5.1.0-rc-fb9a90fa48-20240614
-        version: 5.1.0-rc-fb9a90fa48-20240614(eslint@9.11.1(jiti@2.4.2))
+        specifier: 5.2.0
+        version: 5.2.0(eslint@9.11.1(jiti@2.4.2))
       eslint-plugin-react-refresh:
         specifier: 0.4.12
         version: 0.4.12(eslint@9.11.1(jiti@2.4.2))
@@ -2308,16 +2308,16 @@ packages:
     peerDependencies:
       '@types/react': ^18.0.0
 
-  '@types/react-dom@19.1.5':
-    resolution: {integrity: sha512-CMCjrWucUBZvohgZxkjd6S9h0nZxXjzus6yDfUb+xLxYM7VvjKNH1tQrE9GWLql1XoOP4/Ds3bwFqShHUYraGg==}
+  '@types/react-dom@19.0.4':
+    resolution: {integrity: sha512-4fSQ8vWFkg+TGhePfUzVmat3eC14TXYSsiiDSLI0dVLsrm9gZFABjPy/Qu6TKgl1tq1Bu1yDsuQgY3A3DOjCcg==}
     peerDependencies:
       '@types/react': ^19.0.0
 
   '@types/react@18.3.23':
     resolution: {integrity: sha512-/LDXMQh55EzZQ0uVAZmKKhfENivEvWz6E+EYzh+/MCjMhNsotd+ZHhBGIjFDTi6+fz0OhQQQLbTgdQIxxCsC0w==}
 
-  '@types/react@19.1.6':
-    resolution: {integrity: sha512-JeG0rEWak0N6Itr6QUx+X60uQmN+5t3j9r/OVDtWzFXKaj6kD1BwJzOksD0FF6iWxZlbE1kB0q9vtnU2ekqa1Q==}
+  '@types/react@19.0.10':
+    resolution: {integrity: sha512-JuRQ9KXLEjaUNjTWpzuR231Z2WpIwczOkBEIvbHNCzQefFIT0L8IqE6NV6ULLyC1SI/i234JnDoMkfg+RjQj2g==}
 
   '@types/semver@7.7.0':
     resolution: {integrity: sha512-k107IF4+Xr7UHjwDc7Cfd6PRQfbdkiRabXGRjo07b4WyPahFBZCZ1sE+BNxYIJPPg73UkfOsVOLwqVc/6ETrIA==}
@@ -3575,12 +3575,6 @@ packages:
     engines: {node: '>=10'}
     peerDependencies:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
-
-  eslint-plugin-react-hooks@5.1.0-rc-fb9a90fa48-20240614:
-    resolution: {integrity: sha512-xsiRwaDNF5wWNC4ZHLut+x/YcAxksUd9Rizt7LaEn3bV8VyYRpXnRJQlLOfYaVy9esk4DFP4zPPnoNVjq5Gc0w==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0
 
   eslint-plugin-react-hooks@5.2.0:
     resolution: {integrity: sha512-+f15FfK64YQwZdJNELETdn5ibXEUQmW1DZL6KXhNnc2heoy/sg9VJJeT7n8TlMWouzWqSWavFkIhHyIbIAEapg==}
@@ -7289,16 +7283,16 @@ snapshots:
     dependencies:
       '@types/react': 18.3.23
 
-  '@types/react-dom@19.1.5(@types/react@19.1.6)':
+  '@types/react-dom@19.0.4(@types/react@19.0.10)':
     dependencies:
-      '@types/react': 19.1.6
+      '@types/react': 19.0.10
 
   '@types/react@18.3.23':
     dependencies:
       '@types/prop-types': 15.7.14
       csstype: 3.1.3
 
-  '@types/react@19.1.6':
+  '@types/react@19.0.10':
     dependencies:
       csstype: 3.1.3
 
@@ -8858,10 +8852,6 @@ snapshots:
   eslint-plugin-react-hooks@4.6.2(eslint@8.57.1):
     dependencies:
       eslint: 8.57.1
-
-  eslint-plugin-react-hooks@5.1.0-rc-fb9a90fa48-20240614(eslint@9.11.1(jiti@2.4.2)):
-    dependencies:
-      eslint: 9.11.1(jiti@2.4.2)
 
   eslint-plugin-react-hooks@5.2.0(eslint@9.11.1(jiti@2.4.2)):
     dependencies:
