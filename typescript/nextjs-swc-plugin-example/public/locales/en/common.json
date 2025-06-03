@@ -1,0 +1,6 @@
+{
+  "welcome": "Welcome to the SWC Plugin Example!",
+  "description": "This page demonstrates the use of the 'replace-t' SWC plugin with Next.js.",
+  "greeting": "Hello, {{name}}!",
+  "component_usage": "This is a <bold>bolded</bold> text using the Trans component."
+}
